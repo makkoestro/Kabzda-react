@@ -9,13 +9,18 @@ export type ManType = {
         }
     }
 }
-
-export const Desctructuring = (props:ManType) => {
-    const {name, age}=props
+type PropsType = {
+    title:string
+    man:ManType
+    car:string
+    food:string
+}
+export const Desctructuring = ({title,man, ...props}:PropsType) => {
     return (
         <div>
-                <h1>{name}</h1>
-            <h2>{age}</h2>
+                <h1>{title}</h1>
+            <h2>{man.age}</h2>
+            <h3>{props.food}</h3>
         </div>
     );
 };
